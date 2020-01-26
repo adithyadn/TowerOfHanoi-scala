@@ -1,0 +1,7 @@
+task(runIterative) {
+    def prefix = System.getProperty("os.name").startsWith("Win") ? 'cmd /c ' : ''
+	def commandIterative = "${prefix}scala TowerOfHanoi/src/TowerOfHanoi.scala"
+	println commandIterative.execute().text
+}
+
+defaultTasks 'runIterative'
